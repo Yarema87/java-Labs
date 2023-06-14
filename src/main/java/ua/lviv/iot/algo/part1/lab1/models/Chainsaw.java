@@ -7,36 +7,32 @@ import lombok.*;
 @Getter
 @ToString
 
-public class Chainsaw {
-    private String brand;
-    private int power;
+public class Chainsaw extends Saw{
     private double fuelTankCapacity;
     private double fuelLevel;
-    private boolean isWorking;
-    private static Chainsaw instance;
-
     public boolean start() {
         setWorking(true);
-        return isWorking;
+        return getWorking();
     }
     public boolean stop() {
         setWorking(false);
-        return isWorking;
+        return getWorking();
     }
-    public boolean cutWood(int length) {
-        if (fuelLevel >= length * 0.1) {
-            return true;
-        } else {
-            return false;
-        }
+    public double charge(double fuel){
+        this.fuelLevel = fuelLevel + fuel;
+        return this.fuelLevel;
     }
-    public static Chainsaw getInstance() {
-        return new Chainsaw();
+    public String convertingToString(){
+        Chainsaw chainsaw = new Chainsaw();
+        return chainsaw + "";
     }
-    public static void main(String[] args) {
-        Chainsaw[] chainsaws = {new Chainsaw(), new Chainsaw("T-1000", 900, 2.5, 2.3, false), getInstance(), getInstance()};
-        for (Chainsaw element : chainsaws) {
-            System.out.println(element);
-        }
+    @Override
+    public double getRemainingWorkTime() {
+        return (fuelLevel / 0.6);
+    }
+    public Chainsaw(String brand, int power, boolean isWorking, double workingTimeInHours, double fuelTankCapacity, double fuelLevel){
+        super(brand, power, isWorking, workingTimeInHours);
+        this.fuelTankCapacity = fuelTankCapacity;
+        this.fuelLevel = fuelLevel;
     }
 }
