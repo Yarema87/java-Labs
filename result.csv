@@ -1,0 +1,12 @@
+fuelTankCapacity, fuelLevel, brand, power, isWorking, workTimeInHours
+0.0, 0.0, null, 0, false, 0.0
+3.2, 3.0, T-1000, 900, false, 4.5
+radius, width, brand, power, isWorking, workTimeInHours
+3.2, 3.0, T-1000, 900, false, 4.5
+0.0, 0.0, null, 0, false, 0.0
+batteryCharge, brand, power, isWorking, workTimeInHours
+0, null, 0, false, 0.0
+60, T-1000, 900, false, 4.5
+widthOfCanvas, lengthOfCanvas, brand, power, isWorking, workTimeInHours
+3.0, 3.2, T-1000, 900, false, 4.5
+0.0, 0.0, null, 0, false, 0.0
